@@ -1,0 +1,12 @@
+header-content {
+    ion-toolbar {
+        background: rgba(0, 0, 0, 0.3);
+        color: white;
+    }
+    .bar-button-default-md,
+    .bar-button-clear-md-default,
+    .bar-button-md-default {
+      color: color($colors, secondary);
+      background-color: transparent;
+    }
+}

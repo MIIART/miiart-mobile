@@ -1,0 +1,82 @@
+<!--
+  Generated template for the Add page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <header-content title="Add"></header-content>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item>
+      <ion-label stacked >Titre</ion-label>
+      <ion-input type="text" placeholder="New art work" [(ngModel)]="container.title"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked >Description</ion-label>
+      <ion-input type="text" placeholder="About the work" [(ngModel)]="container.description"></ion-input>
+    </ion-item>
+
+<!-- 
+    <ion-item>
+      <ion-label stacked>Date</ion-label>
+      <ion-datetime displayFormat="MMM DD YYYY" pickerFormat="MMM DD YYYY" [(ngModel)]="container.datePosted"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Address</ion-label>
+      <ion-input type="text" [(ngModel)]="container.address"></ion-input>
+    </ion-item>
+-->
+    <ion-item>
+      <ion-label stacked>Category</ion-label>
+      <ion-select [(ngModel)]="container.idCat" multiple="true">
+        <ion-option *ngFor="let cat of categories" value="{{cat.catName}}" selected="{{cat.catName == 'Street art'}}">
+          {{cat.catName}}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Artist</ion-label>
+      <!--<ion-select *ngFor="let artist of container.artists">-->
+      <ion-select [(ngModel)]="container.artists" multiple="true">
+        <ion-option *ngFor="let artist of artists" value="{{artist.name}}" selected="{{artist.name == 'Unknown'}}">
+          {{artist.name}}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+
+
+
+    <div padding>
+      <button ion-button icon-left color="dark" block round outline center bottom (click)="save()">
+        <ion-icon name='cloud-upload' is-active="false"></ion-icon>
+        <span>Save work</span>
+      </button>
+    </div>
+
+    <div class="item-images no-margin" *ngFor="let image of base64Image" >
+      <div class="item-image">
+        <img src="{{image}}" />
+      </div>
+    </div>
+
+    <ion-fab right bottom>
+      <button ion-fab color="primary" (click)="getPicture()">
+        <ion-icon name="camera"></ion-icon>
+      </button>
+    </ion-fab>
+
+  </ion-list>
+ 
+</ion-content>

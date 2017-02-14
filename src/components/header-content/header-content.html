@@ -1,0 +1,31 @@
+<!--
+  Generated template for the HeaderContent component.
+
+  See https://angular.io/docs/ts/latest/api/core/index/ComponentMetadata-class.html
+  for more info on Angular 2 Components.
+-->
+
+  <ion-toolbar>
+    <ion-buttons left *ngIf="showBack">
+      <button ion-button icon-only (click)="onClickBack()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title text-center>
+      {{title}}
+    </ion-title>
+
+    <ion-buttons end *ngIf="showMore">
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="more" (click)="onClicMore()"></ion-icon>
+      </button>    
+    </ion-buttons>
+
+    <ion-buttons end *ngIf="showNext">
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="arrow-forward" (click)="onClickNext()"></ion-icon>
+      </button>    
+    </ion-buttons>
+  </ion-toolbar>
+
